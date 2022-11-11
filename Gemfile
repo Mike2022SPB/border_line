@@ -14,7 +14,7 @@ gem "jbuilder"
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
 gem "skeleton-rails", :git => "https://github.com/helios-technologies/skeleton-rails"
-
+gem "devise"
 
 group :development, :test do
   gem "factory_bot_rails"
