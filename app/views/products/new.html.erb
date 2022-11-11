@@ -1,0 +1,26 @@
+<h2> Create Product</h2>
+
+<%= form_for(@product) do |f| %>
+  <form>
+    <div class="u-full-width">
+      <%= f.label "Product title" %>
+      <%= f.text_field :title, class: "u-full-width" %>
+    </div>
+
+    <div>
+      <%= f.label "Product description" %>
+      <%= f.text_field :description, class: "u-full-width" %>
+    </div>
+
+    <div>
+      <%= f.label "Product price" %>
+      <%= f.text_field :price, class: "u-full-width" %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Submit", class: "button button-primary" %>
+      <%= link_to "Back", :back, class: "button button-primary" %>
+    </div>
+  </form>
+
+<% end %>
