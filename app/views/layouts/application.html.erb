@@ -11,6 +11,12 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container">
+      <tr>
+        <td><%= link_to "Products", products_path, class: "button button-primary"  %></td>
+        <td><%= link_to "Create Product", new_product_path, class: "button button-primary" %></td>
+      </tr>
+      <%= yield %>
+    </div>
   </body>
 </html>
