@@ -12,14 +12,21 @@
 
   <body>
     <div class="container">
-      <tr>
-        <td><%= link_to "Products", products_path, class: "button button-primary"  %></td>
-        <td><%= link_to "Create Product", new_product_path, class: "button button-primary" %></td>
-      </tr>
 
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-      <%= yield %>
+        <%= link_to "Products", products_path, class: "button button-primary"  %>
+        <%= link_to "Create Product", new_product_path, class: "button button-primary" %>
+        <div class="navbar">
+        <% if user_signed_in? %>
+          <%= button_to "Sign out", destroy_user_session_path,
+                  method: :delete, class: "buffer-small button button-primary" %>
+          <% else %>
+          <%= link_to "Log in", new_user_session_path, class: 'buffer-small button button-primary' %>
+          <%= link_to "Sign up", new_user_registration_path, class: 'buffer-small button button-primary' %>
+        <% end %>
+      </div>
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+        <%= yield %>
     </div>
   </body>
 </html>
