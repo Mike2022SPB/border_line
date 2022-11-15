@@ -4,7 +4,12 @@
 # Examples:
 #
 10.times do
-  Product.create(title: "Product ##{SecureRandom.random_number(100)}", 
+  Product.create!(title: "Product ##{SecureRandom.random_number(100)}", 
   	description: "Description##{SecureRandom.random_number(100)}", 
   	price: SecureRandom.random_number(100))
+
+
+  User.create!(name: "User №#{rand(999_999)}", 
+    email: "email#{rand(999_999)}@email.com", 
+    password: SecureRandom.alphanumeric)
 end
