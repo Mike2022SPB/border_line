@@ -1,0 +1,8 @@
+.navbar {
+  float: right;
+}
+
+form.button_to {
+  width: 20%; 
+  position: relative;
+}
