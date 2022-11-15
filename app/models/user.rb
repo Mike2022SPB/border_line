@@ -6,6 +6,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
          
+  has_many :stores, dependent: :destroy
+  has_many :products, :through => :stores, dependent: :destroy
+
   validates :name, presence: true, length: {maximum:35}
   validates :email, presence: true, length: {maximum:255}
   validates :email, uniqueness: true
